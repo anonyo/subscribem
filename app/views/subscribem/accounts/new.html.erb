@@ -1,7 +1,10 @@
 <h2>Sign Up</h2>
-  <%= form_for(@account) do |account| %>
-  <p>
+<%= form_for(@account) do |account| %>
   <%= account.label :name %><br> <%= account.text_field :name %>
-</p>
+  <%= account.fields_for :owner do |owner| %>
+    <%= owner.label :email %><br> <%= owner.email_field :email %>
+    <%= owner.label :password %><br> <%= owner.password_field :password %>
+    <%= owner.label :password_confirmation %><br> <%= owner.password_field :password_confirmation %>
   <%= account.submit %>
+  <% end %>
 <% end %>

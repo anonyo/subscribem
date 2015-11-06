@@ -7,8 +7,5 @@ module Subscribem
       message: SubdomainValidator.invalid_failure_message
     belongs_to :owner, class_name: "Subscribem::User"
     accepts_nested_attributes_for :owner
-    def subdomain_validator
-      SubdomainValidator.new
-    end
   end
 end
